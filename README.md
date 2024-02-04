@@ -2,39 +2,68 @@
 
 To manage our .dotfiles, We'll use STOW.
 
-# Requirements :
+# Prerequisite :
 
-Ensure you have the following installed on your system
+Ensure you have the following installed on your system.
 
-### Git :
+- Git
+- GNU Stom
 
-`sudo apt install git`
+# TMUX :
 
-### OpenSUSE :
+TMUX is a terminal multiplexer. It lets you switch easily between several programs in one terminal.
 
-`sudo zypper install stow`
+### Installation :
 
-### Dabian :
+Use the following commands to install TMUX on your platform:
 
-`Sudo apt install stow`
+| Platform               | Install Command       |
+| ---------------------- | --------------------- |
+| Arch Linux             | `pacman -S tmux`      |
+| Debian or Ubuntu       | `apt install tmux`    |
+| Fedora                 | `dnf install tmux`    |
+| RHEL or CentOS         | `yum install tmux`    |
+| macOS (using Homebrew) | `brew install tmux`   |
+| macOS (using MacPorts) | `port install tmux`   |
+| openSUSE               | `zypper install tmux` |
 
-# Recomended :
+> Note: These commands may require root privileges. Use `sudo` if necessary.
 
-#### FISH SHELL
+For more information, refer to the [TMUX Installation WiKi](https://github.com/tmux/tmux/wiki)
 
-#### STARSHIP THEME
+# TPM - TMUX Package Manager
 
-# Installation :
+TPM is a package manager for TMUX.
 
-First, check out the dotfiles repo in your $HOME directory using git.
+### Set-Up :
 
-```
-    $ git clone --recursive git@github.com:artlostintime/dotfiles.git
-    $ cd dotfiles/
-```
+Prerequisites: `tmux` version 1.9 (or higher), `git`, `bash`.
 
-then use GNU stow to create symlinks
+Clone TPM:
 
 ```bash
-    $ stow .
+git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.tmux/plugins/tpm
 ```
+
+Add this to the bottom of `~/.tmux.conf ($XDG_CONFIG_HOME/tmux/tmux.conf` works too ):
+
+# Dotfiles SetUp :
+
+First, clone the dotfiles repository in your $HOME directory:
+
+```bash
+     git clone git@github.com:artlostintime/dotfiles.git
+     cd dotfiles/
+```
+
+Note: `SSH` setup is required before using this command.
+
+> NOTE: Should have ssh setup before using this command.
+
+Then, use GNU stow to create symlinks:
+
+```bash
+     stow .
+```
+
+This will create symlinks for all the dotfiles in the current directory.
