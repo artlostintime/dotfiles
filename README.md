@@ -1,8 +1,8 @@
-# DMS (Dotfiles Managment System)
+# DMS (Dotfiles Management System)
 
 A Dotfiles Management System (DMS) organizes configuration files (dotfiles) in Unix-like systems for easy tracking, backup, and synchronization across machines. It often uses a version control system like Git and symbolic links (symlinks) to manage these files. Tools like GNU Stow can simplify the process by managing dotfiles in a tidy directory structure and creating necessary symlinks with a single command.
 
-> To manage our `.dotfiles`, We'll use `STOW`.
+> [!NOTE] To manage our `.dotfiles`, We'll use `STOW`.
 
 # Prerequisite :
 
@@ -43,7 +43,8 @@ Use the following commands to install TMUX on your platform:
 | macOS (using MacPorts) | `port install tmux`   |
 | openSUSE               | `zypper install tmux` |
 
-> Note: These commands may require root privileges. Use `sudo` if necessary.
+> [!TIP]
+> These commands may require root privileges. Use `sudo` if necessary.
 
 For more information, refer to the [TMUX Installation WiKi](https://github.com/tmux/tmux/wiki)
 
@@ -56,7 +57,7 @@ First, clone the dotfiles repository in your $HOME directory:
      cd dotfiles/
 ```
 
-Note: `SSH` setup is required before using this command.
+> [!IMPORTANT] > `SSH` setup is required before using this command.
 
 # TPM - TMUX Package Manager
 
@@ -74,8 +75,6 @@ git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.tmux/plugins/
 
 Add this to the bottom of `~/.tmux.conf ($XDG_CONFIG_HOME/tmux/tmux.conf` works too ):
 
-> NOTE: Should have ssh setup before using this command.
-
 Then, use GNU stow to create symlinks:
 
 ```bash
@@ -83,3 +82,14 @@ Then, use GNU stow to create symlinks:
 ```
 
 This will create symlinks for all the dotfiles in the current directory.
+
+> [!WARNING]
+> Getting `tmux source ~/.config/tmux/tmux.conf return 126`, while sourcing from `tmux source ~/.config/tmux/tmux.conf`
+
+The error `code 126` typically means that the file you're trying to execute (in this case `~/.tmux/plugins/tpm/tpm`) is not executable.
+
+You can change the file permissions to make it executable by running the following command in your terminal:
+
+```bash
+     chmod +x ~/.tmux/plugins/tpm/tpm
+```
