@@ -9,7 +9,9 @@ A Dotfiles Management System (DMS) organizes configuration files (dotfiles) in U
 Ensure you have the following installed on your system.
 
 - Git
-- GNU Stom
+- [GNU Stom](https://www.gnu.org/software/stow/manual/stow.html#Introduction)
+
+---
 
 # TMUX :
 
@@ -26,8 +28,6 @@ TMUX is a powerful, robust terminal multiplexer that allows you to manage multip
   - **Customizable:** TMUX is highly customizable. You can modify key bindings, change the status line, set the default terminal, and much more through the .tmux.conf configuration file.
 
   - **Scriptable:** TMUX sessions can be manipulated and controlled programmatically, which opens up a wide range of possibilities for automation and complex workflows
-
----
 
 ### Installation :
 
@@ -70,7 +70,7 @@ Prerequisites: `tmux` version 1.9 (or higher), `git`, `bash`.
 Clone TPM:
 
 ```bash
-git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.tmux/plugins/
+git clone https://github.com/tmux-plugins/tpm ~/dotfiles/.tmux/plugins/tpm
 ```
 
 Add this to the bottom of `~/.tmux.conf ($XDG_CONFIG_HOME/tmux/tmux.conf` works too ):
